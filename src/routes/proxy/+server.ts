@@ -5,5 +5,6 @@ export const POST = async ({ request }) => {
         method,
         body: body ? JSON.stringify(body) : undefined,
     })
+    response.headers.set('set-cookie', response.headers.getSetCookie().join('\n'))
     return response
 }
